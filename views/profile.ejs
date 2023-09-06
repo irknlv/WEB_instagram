@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head.ejs')%>
+</head>
+<body>
+    <main>
+        <div class="border-header">
+          <div class="wrapper-page">
+            <section>
+                <div class="header-profile">
+                    <div class="header-profile-logo">
+                        <Link to="/home">
+                            <img src="/images/logo.svg" alt="" />
+                        </Link>
+                    </div>
+                    <div class="header-profile-search">
+                        <input 
+                            id="searchInput" 
+                            type="text" 
+                            placeholder="Search" 
+                        />
+                    </div>
+                    <div class="header-profile-menu">
+                        <a href="">
+                            <img src="/images/icons/home.svg" alt="" />
+                        </a>
+                        <a href="">
+                            <img src="/images/icons/direct.svg" alt="" />
+                        </a>
+                        <button>
+                            <img src="/images/icons/newPost.svg" alt="" />
+                        </button>
+                        <a href="">
+                            <img src="/images/icons/news.svg" alt="" />
+                        </a>
+                        <a href="">
+                            <img src="/images/icons/like.svg" alt="" />
+                        </a>
+                        <a href="/profile">
+                            <img src="/images/icons/profilePicture.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+          </div>
+        </div>
+        <div class="wrapper-page">
+            <section>
+                <div class="user-profile">
+                    <img src="/images/userProfilePicture.png" alt="" class="user-profile-logo" />
+                    <div class="user-profile-content">
+                        <div class="user-profile-menu">
+                            <h3><%=user.login%></h3>
+                            <%
+                                if(decodedToken.login !== user.login){
+                            %>
+                                <button class="user-profile-followButton">Follow</button>
+                                <button class="user-profile-burgerButton">...</button>
+                            <%  
+                                }
+                            %>
+                            
+                        </div>
+                        <div class="user-profile-info">
+                            <small><span><%=posts.length%></span> posts</small>
+                            <button onClick={openModal}><small><span>4M</span> followers</small></button>
+                            <small><span>1,250</span> following</small>
+                        </div>
+                        <div class="user-profile-biography">
+                            <span><%=user.fullname%></span>
+                        </div>
+                    </div>
+                </div>
+                <section>
+                    <div class="profile-media">
+                        <div>
+                            <img src="/images/icons/postsIcon.svg" alt="" />
+                            <span>POSTS</span>
+                        </div>
+                    </div>
+                    <div class="profile-posts">
+                        <%
+                            if(posts.length===0){
+                        %>
+                                <h1 style="margin-left: 45%;">Нет постов!</h1>
+                        <%        
+                            }else{
+                                for(let post of posts){ 
+                        %>
+                                <div class="profile-post">
+                                    <div class="profile-post-image">
+                                        <% 
+                                            for(mediaFile of post.mediaFiles){
+                                        %>
+                                            <img src="http://104.248.151.123:8000/<%=mediaFile.url%>" alt="">
+                                        <%        
+                                            }
+                                        %>
+                                    </div>
+                                </div>
+                        <%
+                            }
+                        }
+                        %>
+                    </div>
+                </section>
+           </section>
+        </div>
+        <div class="footer">
+            <div class="footer-links">
+                <a href="">Meta</a>
+                <a href="">About</a>
+                <a href="">Blog</a>
+                <a href="">Jobs</a>
+                <a href="">Help</a>
+                <a href="">API</a>
+                <a href="">Privacy</a>
+                <a href="">Terms</a>
+                <a href="">Top Accounts</a>
+                <a href="">Locations</a>
+                <a href="">Instagram Lite</a>
+                <a href="">Contact Uploading & Non-Users</a>
+                <a href="">Meta Verified</a>
+            </div>
+            <div class="footer-links">
+                <a href="" class="footer-links-language">
+                    English
+                    <img src="/images/arrowDown.svg" alt="" />
+                </a>
+                <span>© 2023 Instagram from Meta</span>
+            </div>
+       </div>
+      </main>
+</body>
+</html>
+

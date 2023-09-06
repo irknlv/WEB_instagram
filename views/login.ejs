@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head.ejs')%>
+</head>
+<body>
+    <div class="login">
+        <div class="auth-left">
+            <img src="/images/loginLogo.svg" alt="" />
+        </div>
+        <div class="login-container">
+            <div class="auth-main auth-main-login">
+                <img src="/images/logo.svg" class="auth-main-logo"></img>
+                <form action="/request/login" method="POST" class="auth-form">
+                    <input name="loginText" type="text" placeholder="Phone number, username, or email"/>
+                    <input name="password" type="password" placeholder="Password"/>
+                    <button class="auth-button" type="submit">Log in</button>
+                </form>
+                <span>OR</span>
+                <a href="" class="auth-button auth-button-facebook-blue">
+                        <img src="/images/facebookBlue.svg" alt="" />
+                        Log in with Facebook
+                </a>
+                <a href="" class="auth-password-link">Forgot password?</a>
+            </div>
+            <div class="auth-link">
+                <p>Don't have an account? <a href="/signUp">Sign up</a></p>
+            </div>
+            <span>Get the app.</span>
+            <div class="auth-links">
+                <a href="">
+                    <img src="/images/googlePlay.svg" alt="" />
+                </a>
+                <a href="">
+                    <img src="/images/microsoft.svg" alt="" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <a href="">Meta</a>
+            <a href="">About</a>
+            <a href="">Blog</a>
+            <a href="">Jobs</a>
+            <a href="">Help</a>
+            <a href="">API</a>
+            <a href="">Privacy</a>
+            <a href="">Terms</a>
+            <a href="">Top Accounts</a>
+            <a href="">Locations</a>
+            <a href="">Instagram Lite</a>
+            <a href="">Contact Uploading & Non-Users</a>
+            <a href="">Meta Verified</a>
+        </div>
+        <div class="footer-links">
+            <a href="" class="footer-links-language">
+                English
+                <img src="/images/arrowDown.svg" alt="" />
+            </a>
+            <span>© 2023 Instagram from Meta</span>
+        </div>
+   </div>
+</body>
+</html>
