@@ -22,3 +22,23 @@
     align-items:center;
     gap: 5px;
 }
+/* Медиа-запрос для экранов шириной 414px и меньше (iPhone 14 Pro) */
+@media (max-width: 414px) {
+    /* Уменьшили верхний отступ для экономии места */
+    .footer {
+      margin-top: 20px;
+      gap: 10px; /* Уменьшили промежуток между элементами */
+    }
+    /* Уменьшили размер шрифта и отступы внутри footer */
+    .footer > div > a,
+    .footer > div > span {
+      font-size: 10px;
+      gap: 5px;
+    }
+  
+    /* Уменьшили размер шрифта для элементов .footer-links-language */
+    .footer-links-language {
+      gap: 3px; /* Уменьшили промежуток между элементами */
+    }
+  }
+  
