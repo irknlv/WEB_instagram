@@ -164,7 +164,7 @@
     border: 1px solid #DBDBDB;
     padding: 20px; /* Уменьшили внутренние отступы для устройств с маленькими экранами */
     display: flex;
-    width: 380px;
+    width: 350px;
     flex-direction: column;
     align-items: center;
     gap: 12px;
@@ -248,7 +248,7 @@
   .auth-form > input {
     background-color: #FAFAFA;
     height: 36px;
-    width: 200px;
+    width: 240px;
     padding-left: 10px;
     border: 1px solid #cccccdea;
     border-radius: 2px;
