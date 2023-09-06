@@ -372,6 +372,8 @@
       flex-direction: column; /* Изменили направление флекс-контейнера для портретной ориентации */
       padding: 20px 10px; /* Уменьшили верхний/нижний отступы и боковые отступы */
       gap: 10px; /* Уменьшили промежуток между элементами */
+      justify-content: center;
+      align-items: center;
     }
   
     .login-container {
